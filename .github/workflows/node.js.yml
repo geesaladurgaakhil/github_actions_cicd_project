@@ -29,7 +29,7 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v4 
 
-      name: gitleak setup
+    - name: gitleak setup
       uses: gitleaks/gitleaks-action@v2
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
