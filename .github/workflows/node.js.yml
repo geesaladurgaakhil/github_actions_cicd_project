@@ -21,6 +21,14 @@ jobs:
       with:
         node-version: '23'
         cache: 'npm'
-    - run: npm ci
-    # - run: npm run build --if-present
-    # - run: npm test
+
+  gitleaks:
+    runs-on: github-actions-cicd-runner
+    needs: ['build']
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4 
+    
+    - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
