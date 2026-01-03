@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const GITHUB_TOKEN = "ghp_1234567890abcdefghijklmnopqrstuvwxyz";
+const AWS_SECRET_ACCESS_KEY = "AKIAIOSFODNN7EXAMPLE";
 
 app.get("/", (req, res) => {
   res.send("🚀 Node.js app deployed to AKS using GitHub Actions!");
